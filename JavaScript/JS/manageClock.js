@@ -15,6 +15,8 @@ function startClock() {
         if (second == 60) {
             second = 0;
             minute++;
+            if(minute == 60)
+                minute = 0;
             document.getElementById("min").innerHTML = minute;
         }
         second++;
