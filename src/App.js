@@ -7,6 +7,23 @@ import Homepage from './homepage/Homepage';
 
 export class App extends React.Component {
 
+  state = {
+    albums : [
+      {
+        id : 1,
+        title : "Valar Morghulis"
+      },
+      {
+        id : 2,
+        title : "All Men Must Die"
+      },
+      {
+        id : 3,
+        title : "Vala Dohaeris"
+      }
+    ]
+  }
+
   render() {
     return (
       <Router>
@@ -27,7 +44,7 @@ export class App extends React.Component {
 
           <Route path="/" exact component={Homepage} />
           <Route path="/about/" component={About} />
-          <Route path="/albums/" component={Albums} />
+          <Route path="/albums/" render = {() => <Albums albums = {this.state.albums}></Albums>} />
         </div>
       </Router>
     );
