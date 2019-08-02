@@ -18,7 +18,6 @@ export class Albums extends React.Component {
 
     render() {
         let albums = this.props.albums;
-        console.log(albums);
         return (
             <div className="albums">
                 Filter By ID:
